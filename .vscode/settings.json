@@ -12,6 +12,19 @@
             "database": "202310_users_makkieie",
             "username": "makkieie",
             "password": "Shout4_makkieie_GOME"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "cmsc508.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Ali Connection",
+            "database": "202310_teams_team22",
+            "username": "kradiah",
+            "password": "Shout4_kradiah_GOME"
         }
     ]
 }
