@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS customer_table(
 # insert parameters into customer table 
 insert into customer_table(customer_first_name, customer_last_name, customer_phone_number, customer_email, customer_gender, customer_shoe_size) VALUES
 ('Jaafar', 'Maksoud', '8043002806', 'Maksoudj@vcu.edu', 'male', 10),
-('Yeabsera', 'Yamir Wolle', '7039751831', 'yimerwolley@vcu.edu', 'female', 6),
+('Yeabsera', 'Yimer Wolle', '7039751831', 'yimerwolley@vcu.edu', 'female', 6),
 ('Isam', 'Makkie', '7033075980', 'makkieie@vcu.edu','male',11),
 ('Ali', 'Kradi', '8048375849', 'Kradiah@vcu.edu','male',10)
 ;
@@ -306,6 +306,14 @@ insert into customer_transaction(customer_id, transaction_id) values
 (04, 04)
 ;
 
+
+
+#create view for a full transaction TABLE
+create view full_customer_transaction AS
+select customer_transaction.customer_id,transaction_table.shoe_id, transaction_table.transaction_cost, transaction_table.transaction_date_month, transaction_table.transaction_date_day, transaction_table.transaction_date_year from customer_transaction
+left join transaction_table
+on customer_transaction.transaction_id = transaction_table.transaction_id
+;
 
 #create table for the market values
 create table if not exists market_values_table (
@@ -400,10 +408,16 @@ insert into market_values_table(shoe_id, market_values) values
 ;
 
 
+DROP PROCEDURE all_credentials;
 
-
-
-
+CREATE PROCEDURE all_credentials()
+BEGIN
+    SELECT DISTINCT owner_table.*
+    FROM owner_table
+    JOIN owner_authentication
+    ON owner_table.owner_id = owner_authentication.owner_id;
+END;
+call all_credentials();
 
 
 
