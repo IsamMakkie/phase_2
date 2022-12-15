@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 drop table if EXISTS owner_authentication;
 drop table if EXISTS market_values_table;
 drop procedure if EXISTS get_Name;
