@@ -7,14 +7,14 @@ drop table if EXISTS customer_transaction;
 drop table if EXISTS transaction_table;
 drop view if exists full_customer_transaction;
 drop procedure if exists get_colorway;
-=======
+
 drop table if EXISTS market_values_table;
 drop table if EXISTS owner_authentication;
 drop table if EXISTS customer_transaction;
 drop table if EXISTS transaction_table;
 drop view if exists full_customer_transaction;
 drop procedure if exists all_credentials;
->>>>>>> f793df4fd548c1b57798536d6e641a019d4f923e
+
 drop table if EXISTS inventory_table;
 drop table if EXISTS customer_table;
 drop table if EXISTS shoe_table;
@@ -30,10 +30,10 @@ CREATE TABLE IF NOT EXISTS owner_table(
     PRIMARY KEY(owner_id)
 );
 
-<<<<<<< HEAD
-=======
 
->>>>>>> f793df4fd548c1b57798536d6e641a019d4f923e
+
+
+
 insert into owner_table(owner_first_name, owner_last_name, owner_company_name, owner_email)values
 ('Andy', 'Ngo', 'The Drop', 'AD@gmail.com')
 ;
@@ -52,11 +52,9 @@ insert into owner_authentication(owner_id, owner_auth_username, owner_auth_passw
 (01, 'ANgo', 'Shoes123')
 ;
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> f793df4fd548c1b57798536d6e641a019d4f923e
+
 CREATE TABLE IF NOT EXISTS shoe_table(
     shoe_id int not NULL auto_increment,
     shoe_brand varchar(255),
@@ -154,11 +152,11 @@ insert into shoe_table (shoe_brand, shoe_size, shoe_name, shoe_colorway, shoe_re
 CREATE TABLE IF NOT EXISTS inventory_table(
     inventory_id int not NULL auto_increment,
     shoe_id int not NULL,
-<<<<<<< HEAD
+
     Foreign Key (shoe_id) REFERENCES shoe_table(shoe_id),
-=======
+
     Foreign Key (shoe_id) REFERENCES shoe_table(shoe_id) ON DELETE cascade,
->>>>>>> f793df4fd548c1b57798536d6e641a019d4f923e
+
     PRIMARY KEY(inventory_id)
 );
 
@@ -383,8 +381,7 @@ insert into market_values_table(shoe_id, market_values) values
 ;
 
 
-<<<<<<< HEAD
-=======
+
 
 create trigger add_inv after insert on shoe_table for each row
 begin
@@ -400,7 +397,7 @@ left join transaction_table
 on customer_transaction.transaction_id = transaction_table.transaction_id
 ;
 
->>>>>>> f793df4fd548c1b57798536d6e641a019d4f923e
+
 
 create trigger add_inv after insert on shoe_table for each row
 begin
